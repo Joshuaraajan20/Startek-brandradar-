@@ -51,3 +51,9 @@ a:focus-visible {
 [data-radix-popper-content-wrapper] {
   z-index: 50 !important;
 }
+/* Remove Emergent badge */
+iframe,
+[class*="emergent"],
+[id*="emergent"] {
+  display: none !important;
+}
