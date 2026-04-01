@@ -109,23 +109,3 @@
         </script>
     </body>
 </html>
-<script>
-  // Block emergent script from loading
-  const originalCreateElement = document.createElement;
-  document.createElement = function(tagName) {
-    const element = originalCreateElement.call(document, tagName);
-
-    if (tagName === 'script') {
-      const originalSetAttribute = element.setAttribute;
-      element.setAttribute = function(name, value) {
-        if (name === 'src' && value.includes('emergent')) {
-          console.log('Blocked emergent script:', value);
-          return;
-        }
-        return originalSetAttribute.call(this, name, value);
-      };
-    }
-
-    return element;
-  };
-</script>
