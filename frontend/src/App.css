@@ -62,3 +62,12 @@ iframe[src*="emergent"],
 div[id*="emergent"] {
   display: none !important;
 }
+/* FORCE remove emergent badge (runtime injected) */
+#emergent-badge,
+a[href*="emergent.sh"],
+iframe[src*="emergent"],
+div[class*="emergent"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
